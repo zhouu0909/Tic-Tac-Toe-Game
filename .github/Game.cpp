@@ -1,10 +1,32 @@
-#include<iostream>
 #include<string>
+#include<iostream>
 using namespace std;
 int board[10] = {};
-int L[8][3] = { {1,2,3},{4,5,6},{7,8,9},{1,4,7},{2,5,8},{3,6,9},{1,5,9},{3,5,7} };//8條線
+void lattice() {
+	char L[8][8] = { {'~','~','~','~','~','~','~'},
+				 {'|',' ','|',' ','|',' ','|'},
+				 {'~','~','~','~','~','~','~'},
+				 {'|',' ','|',' ','|',' ','|'},
+				 {'~','~','~','~','~','~','~'},
+				 {'|',' ','|',' ','|',' ','|'},
+				 {'~','~','~','~','~','~','~'} };
+
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 8; j++) {
+			cout << L[i][j];
+		}
+		cout << endl;
+	}
+}
+
+
+
+
+
+
+
 void printBoard() {
-cout << "~~~~~~" << endl;
+	cout << "~~~~~~" << endl;
 	for (int i = 1; i < 10; i++)
 	{
 		if (board[i] == 1)
@@ -27,17 +49,15 @@ cout << "~~~~~~" << endl;
 	}
 }
 
-void play(int player, int &i) {
+void play(int player, int& i) {
 	printBoard();
-	cout << "Player=" << i <<endl;
+	cout << "Player=" << i << endl;
 	do {
 		do {
 			cout << "請說出要下的位置: ";
 			cout << &i;
-		}
-		while (i < 1 || i > 9);
-	} 
-	while (board[i] != 0);
+		} 		while (i < 1 || i > 9);
+	} 	while (board[i] != 0);
 	board[i] = player;
 }
 
@@ -47,8 +67,10 @@ int main() {
 	cin >> codeName1;
 	cout << endl;
 	cout << "Please key in second player's codename: ";
-	cin>>codeName2;
+	cin >> codeName2;
 	cout << endl;
 	printBoard();
-
+	cout << endl;
+	lattice();
+	
 }
