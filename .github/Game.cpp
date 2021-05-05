@@ -50,5 +50,11 @@ int main() {
 	cin>>codeName2;
 	cout << endl;
 	printBoard();
+	
+	
+	
+	
+	
+	
 
 }
