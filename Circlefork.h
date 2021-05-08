@@ -8,13 +8,13 @@ class Circlefork
 {
 public:
 	Circlefork(string);
-	void OX(char,char [][8],char  );
-
+	int OX(char, char[][8], char);
+	int getindex();
 
 
 private:
 	string name;
-
+	static int index;
 
 };
 #endif
