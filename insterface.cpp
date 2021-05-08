@@ -3,15 +3,9 @@
 #include"Circlefork.h"
 using namespace std;
 
-char L[8][8] = { {'~','~','~','~','~','~','~'},
-				 {'|','1','|','2','|','3','|'},
-				 {'~','~','~','~','~','~','~'},
-				 {'|','4','|','5','|','6','|'},
-				 {'~','~','~','~','~','~','~'},
-				 {'|','7','|','8','|','9','|'},
-				 {'~','~','~','~','~','~','~'} };
+
 void lattice(char L[][8]) {
-	
+
 	for (int i = 0; i < 8; i++) {
 		for (int j = 0; j < 8; j++) {
 			cout << L[i][j];
@@ -26,8 +20,8 @@ void lattice(char L[][8]) {
 
 
 int main() {
-	char key ;
-	int index = 1,i=3;
+	char key;
+	int d, i = 3;
 
 	char L[8][8] = { {'~','~','~','~','~','~','~'},
 				 {'|','1','|','2','|','3','|'},
@@ -46,24 +40,27 @@ int main() {
 	Circlefork player1(codeName1);
 	Circlefork player2(codeName2);
 	lattice(L);
+	d=player1.getindex();
 	do {
 		cout << "請選擇未選過的位置: ";
 		cin >> key;
 
-			if (index % 2 != 0) {
-			
-				player1.OX(key, L, 'O');
-				lattice(L);
-				index++;
-			}
-			else {
-			
-				player1.OX(key, L, 'X');
-				lattice(L);
-				index++;
+		if (d % 2 != 0) {
 
-			}
-	} 	while (i != 8);
+			player1.OX(key, L, 'O');
+			lattice(L);
+			d=player1.getindex();
+			
+		}
+		else {
 
-	
+			player1.OX(key, L, 'X');
+			lattice(L);
+			d = player1.getindex();
+		
+		}
+		
+	} while (i != 8);
+
+
 }
