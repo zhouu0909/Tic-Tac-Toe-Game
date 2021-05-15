@@ -11,7 +11,7 @@ Player::Player(string nN,char nSy) {
 bool Player::setSymbol(char B[][8],char nSy,int Block) {
 	bool re = false;
 	int x, y;
-	x = ((Block - 1) / 3)*2+1;
+	x = ((Block - 1) / 3) * 2 + 1;
 	y = ((Block - 1) % 3) * 2 + 1;
 
 	if(B[x][y] != '0' )
