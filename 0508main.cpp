@@ -19,7 +19,26 @@ void MakeBoard() //初始化
 		for (int j = 0; j < 7; j++)
 		{
 			if (i % 2 != 0 && j % 2 != 0)
-				Board[i][j] = '0';
+			{
+				if (i == 1 && j == 1)
+					Board[i][j] = '1';
+				else if (i == 1 && j == 3)
+					Board[i][j] = '2';
+				else if (i == 1 && j == 5)
+					Board[i][j] = '3';
+				else if (i == 3 && j == 1)
+					Board[i][j] = '4';
+				else if (i == 3 && j == 3)
+					Board[i][j] = '5';
+				else if (i == 3 && j == 5)
+					Board[i][j] = '6';
+				else if (i == 5 && j == 1)
+					Board[i][j] = '7';
+				else if (i == 5 && j == 3)
+					Board[i][j] = '8';
+				else if (i == 5 && j == 5)
+					Board[i][j] = '9';
+			}
 			else
 				Board[i][j] = '*';
 		}		
